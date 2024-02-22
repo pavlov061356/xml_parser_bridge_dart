@@ -8,8 +8,21 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  ffi: ^2.1.0
   # path: ^1.8.0
 
 dev_dependencies:
+  ffigen: ^11.0.0
   lints: ^2.1.0
   test: ^1.24.0
+
+ffigen:
+  output: 'generated_bindings.dart'
+  headers:
+    entry-points:
+      - 'lib/src/c_import/xml_validator.h'      
+    include-directives:
+      - '/home/vladimir/flutter_proj/xml_parser_bridge_dart/lib/src/c_import**'
+  # compiler-opts:
+  # Your libxml path
+  # - '-I/usr/lib/llvm-9/include/'
